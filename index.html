@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riya Choudhary - Cloud Resume</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+    .container { max-width: 800px; margin: auto; background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+    h1, h2 { color: #333; }
+    h1 { border-bottom: 2px solid #4CAF50; padding-bottom: 5px; }
+    ul { padding-left: 20px; }
+    .section { margin-bottom: 20px; }
+    .skills, .projects, .certs { display: flex; flex-direction: column; gap: 10px; }
+    .label { font-weight: bold; }
+    .highlight { color: #4CAF50; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Riya Choudhary</h1>
+    <p><strong>Email:</strong> riyaaachoudhary@gmail.com | <strong>Phone:</strong> 8169529826 | <strong>Location:</strong> Mumbai, Maharashtra</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/riya-choudhary-224940377" target="_blank">riya-choudhary</a></p>
+
+    <div class="section">
+      <h2>Profile</h2>
+      <p>Self-motivated and detail-oriented IT graduate with a solid foundation in cloud computing, infrastructure, and DevOps. Hands-on with AWS (EC2, S3, Lambda, CloudWatch), scripting (Python, Bash), Linux systems, and CI/CD basics. Passionate about automation, cloud deployments, and continuous learning.</p>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>BSc-IT</strong>, Mulund College of Commerce, Mumbai University – 7.7 SGPA</li>
+        <li><strong>HSC (Science)</strong>, Wamarao Muranjan Jr. College</li>
+      </ul>
+    </div>
+
+    <div class="section skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><span class="label">Cloud Platforms:</span> AWS (EC2, S3, Lambda, IAM, VPC), Azure</li>
+        <li><span class="label">DevOps Tools:</span> Git, GitHub, Docker, Jenkins, Jira, CI/CD</li>
+        <li><span class="label">IaC:</span> Terraform, AWS CloudFormation (basic)</li>
+        <li><span class="label">Programming:</span> Python (Boto3), Bash, Linux CLI</li>
+        <li><span class="label">Database:</span> DynamoDB, Amazon RDS, SQL (MySQL/PostgreSQL)</li>
+        <li><span class="label">Monitoring:</span> AWS CloudWatch, Azure Monitor</li>
+      </ul>
+    </div>
+
+    <div class="section certs">
+      <h2>Certifications</h2>
+      <ul>
+        <li>Microsoft Certified: Azure Fundamentals (AZ-900)</li>
+        <li>DevOps Fundamentals – IBM Developer Skills Network</li>
+      </ul>
+    </div>
+
+    <div class="section projects">
+      <h2>Projects</h2>
+      <p><strong>Smart Shoes – IoT Project</strong> (Dec 2024 – Feb 2025)</p>
+      <ul>
+        <li>Developed smart shoes using Arduino and sensors to assist visually impaired users</li>
+        <li>Used ultrasonic sensor for obstacle detection and GPS + GSM for real-time location alerts</li>
+        <li>Technologies: Arduino Uno, Ultrasonic Sensor, GPS NEO-6M, GSM SIM800L, C++</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Visitor Count</h2>
+      <p>This resume has been viewed <span id="visitor-count">Loading...</span> times.</p>
+    </div>
+
+    <script>
+      // This script will fetch visitor count from your AWS API Gateway endpoint (optional later)
+      fetch("https://your-api-id.execute-api.region.amazonaws.com/prod/visit")
+        .then(res => res.text())
+        .then(count => {
+          document.getElementById("visitor-count").innerText = count;
+        })
+        .catch(() => {
+          document.getElementById("visitor-count").innerText = "Unavailable";
+        });
+    </script>
+  </div>
+</body>
+</html>
